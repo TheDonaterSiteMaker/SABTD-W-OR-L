@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steal a Brainrot | TD Values & Lore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-blur"></div>
+    
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="glitch">STEAL A BRAINROT</h1>
+            <p class="stats-bar">SYSTEM v2.0 ONLINE | VALUES</p>
+        </header>
+
+        <div id="values-section">
+            <nav class="rarity-filters">
+                <button onclick="filterUnits('all')" class="btn-filter active">All</button>
+                <button onclick="filterUnits('uncommon')" class="btn-filter">Uncommon</button>
+                <button onclick="filterUnits('rare')" class="btn-filter">Rare</button>
+                <button onclick="filterUnits('epic')" class="btn-filter">Epic</button>
+                <button onclick="filterUnits('legendary')" class="btn-filter">Legendary</button>
+                <button onclick="filterUnits('mythic')" class="btn-filter">Mythic</button>
+                <button onclick="filterUnits('brainrotgod')" class="btn-filter">BrainrotGod</button>
+                <button onclick="filterUnits('secret')" class="btn-filter">Secret</button>
+            </nav>
+
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Search for brainrot values..." oninput="searchUnits()">
+            </div>
+
+            <div id="unit-container" class="unit-grid"></div>
+        </div>
+
+        <div id="peakers-section" class="hidden">
+            <div id="peakers-container" class="unit-grid"></div>
+        </div>
+    </div> <div id="unit-modal" class="modal hidden" onclick="handleOutsideClick(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2 id="m-name">Unit Name</h2>
+            </div>
+            <div class="modal-body">
+                <p>Value: <span id="m-price" style="color:#00ffa3"></span></p>
+                <p>Demand: <span id="m-demand"></span></p>
+                <button class="confirm-btn" onclick="closeModule()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<footer class="main-footer">
+    <p>© 2025 STEAL A BRAINROT TD </TD> | Created by <span class="author-name">Roblox Group: ChEz_Team</span></p>
+</footer>
+</body>
+</html>

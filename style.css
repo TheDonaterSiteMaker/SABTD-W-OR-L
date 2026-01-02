@@ -1,0 +1,134 @@
+:root {
+    --bg-black: #050505;
+    --card-bg: rgba(15, 15, 15, 0.8);
+    --accent: #00ffa3;
+    --text: #ffffff;
+    --border: rgba(255, 255, 255, 0.1);
+    
+    /* Цвета редкостей */
+    --uncommon: #1dbd00;
+    --rare: #0084ff;
+    --epic: #b000ff;
+    --legendary: #ffe600;
+    --mythic: #ff0000;
+    --secret: #000000;
+    --brainrotgod: #66ff00;
+}
+
+body {
+    background: var(--bg-black);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.bg-blur {
+    position: fixed; inset: 0;
+    background: radial-gradient(circle at top, #111 0%, #050505 100%);
+    z-index: -1;
+}
+
+.main-footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.main-footer p {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.author-name {
+    color: var(--accent); /* Твой зеленый неоновый цвет */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.app-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+/* Шапка */
+header { text-align: center; margin-bottom: 40px; }
+.glitch { font-family: 'Syncopate', sans-serif; font-size: 2.8rem; letter-spacing: 10px; text-transform: uppercase; }
+.stats-bar { opacity: 0.4; font-size: 0.7rem; letter-spacing: 2px; }
+
+/* Навигация (VALUES / PEAKERS) */
+.main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+.nav-btn {
+    background: transparent; border: 1px solid var(--border); color: white;
+    padding: 15px 35px; font-family: 'Syncopate', sans-serif; font-size: 0.8rem;
+    cursor: pointer; transition: 0.3s; letter-spacing: 2px;
+}
+.nav-btn.active { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 15px rgba(0,255,163,0.2); }
+
+/* Фильтры редкостей */
+.rarity-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+.btn-filter {
+    background: #111; border: 1px solid var(--border); color: white;
+    padding: 8px 18px; border-radius: 5px; cursor: pointer; transition: 0.2s;
+}
+.btn-filter.active { background: white; color: black; border-color: white; }
+
+/* Поиск */
+.search-wrapper { text-align: center; margin-bottom: 40px; }
+#searchInput {
+    width: 100%; max-width: 450px; background: #111; border: 1px solid var(--border);
+    padding: 15px 20px; border-radius: 12px; color: white; font-size: 1rem; outline: none;
+}
+#searchInput:focus { border-color: var(--accent); }
+
+/* Сетки */
+.unit-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 25px; 
+}
+
+/* Карточки юнитов (Values) */
+.unit-card { 
+    background: var(--card-bg); 
+    border-radius: 20px; 
+    padding: 20px; 
+    border: 1px solid var(--border); 
+    cursor: pointer; 
+    text-align: center; 
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.unit-card:hover { border-color: var(--accent); transform: translateY(-5px); background: rgba(255,255,255,0.03); }
+
+/* Теги редкостей */
+.rarity-tag { font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; margin-bottom: 10px; display: inline-block; }
+.uncommon-tag { color: var(--uncommon); border: 1px solid var(--uncommon); }
+.rare-tag { color: var(--rare); border: 1px solid var(--rare); }
+.epic-tag { color: var(--epic); border: 1px solid var(--epic); }
+.legendary-tag { color: var(--legendary); border: 1px solid var(--legendary); }
+.mythic-tag { color: var(--mythic); border: 1px solid var(--mythic); }
+.secret-tag { color: var(--secret); border: 1px solid var(--secret); }
+.brainrotgod-tag { color: var(--brainrotgod); border: 1px solid var(--brainrotgod); }
+
+/* Карточки Peakers (Премиум стиль) */
+.peaker-style {
+    background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(5,5,5,0.9));
+    border: 1px solid rgba(0, 255, 163, 0.2);
+}
+.peaker-style h2 { margin-top: 10px; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Модальное окно */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+.modal-card { 
+    background: #0f0f0f; width: 100%; max-width: 400px; padding: 40px; 
+    border-radius: 30px; border: 1px solid var(--border); text-align: center;
+}
+.modal-tag { display: inline-block; margin-bottom: 15px; }
+.confirm-btn { 
+    width: 100%; padding: 15px; border-radius: 12px; border: none; 
+    background: var(--accent); color: black; font-weight: 900; 
+    cursor: pointer; margin-top: 25px; transition: 0.2s;
+}
+.confirm-btn:hover { opacity: 0.8; transform: scale(0.98); }
+.hidden { display: none !important; }
